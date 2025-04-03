@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 80px;">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Angenda</th>
+                <th>Meeting Date</th>
+                <th>Meeting Time</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let meeting of meetList">
+                <td>{{meeting.id}}</td>
+                <td>{{meeting.agenda}}</td>
+                <td>{{meeting.meetDate}}</td>
+                <td>{{meeting.meetTime}}</td>
+                
+                <td>
+                    <a routerLink="" (click)="getOneMeeting(meeting.id)"><fa-icon [icon]="editIcon" 
+                        class="text-info" size="2x"></fa-icon></a>
+
+                    <a routerLink="/meetings-list" (click)="deletingMeeting(meeting.id)"> <fa-icon [icon]="trashIcon"
+                            class="text-danger" size="2x" style="margin-left: 15px;"></fa-icon></a>
+
+                </td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>

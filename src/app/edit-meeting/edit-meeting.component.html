@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row" style="margin-top: 80px;">
+        <form #meetingForm="ngForm" (ngSubmit)="updatingMeeting()">
+            <div class="card" style="border: rgb(11, 218, 104);">
+                <div class="card-header">Setting Meeting Details</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Meeting Agenda</label>
+                            <input type="text" class="form-control" name="agenda"
+                                [(ngModel)]="meetObj.agenda" />
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="form-group col-md-4">
+                            <label>Meeting Date</label>
+                            <div class="input-group">
+                                <input class="form-control" type="date" placeholder="yyyy-MM-dd" name="meetDate"
+                                    [(ngModel)]="meetObj.meetDate" ngbDatepicker
+                                    #dpStart="ngbDatepicker" />
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Meeting Time</label>
+
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="hh:mm" name="meetTime"
+                                    [(ngModel)]="meetObj.meetTime" />  
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        <input type="submit" value="Update Meeting" class="btn btn-primary" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row" style="margin-top: 80px;">
+
+        <div class="card" style="border: rgb(11, 218, 104);">
+            <div class="card-header">Editing Project Details</div>
+            <div class="card-body">
+
+                <form #projForm = "ngForm" (ngSubmit)="editingProject()">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label>Project Name</label>
+                            <input type="text" class="form-control" name="name" [(ngModel)]="projObject.name" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Duration</label>
+                            <input type="number" class="form-control" name="duration"
+                                [(ngModel)]="projObject.duration" />
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="form-group col-md-4">
+                            <label>Start Date</label>
+
+                            <div class="input-group">
+                                <input class="form-control" type="date" placeholder="yyyy-MM-dd" name="startDate"
+                                    [(ngModel)]="projObject.startDate" ngbDatepicker #dpStart="ngbDatepicker" />
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>End Date</label>
+
+                            <div class="input-group">
+                                <input class="form-control" type="date" placeholder="yyyy-MM-dd" name="endDate"
+                                    [(ngModel)]="projObject.endDate" ngbDatepicker #dpEnd="ngbDatepicker" />
+                            </div>
+
+                        </div>
+
+                        <div class="custom-select" style="margin-top: 30px; width: 200px ;">
+
+                            <select [(ngModel)]="projObject.projectStatus" [ngModelOptions]="{standalone: true}"
+                                class="optionStyle">
+
+                                <option *ngFor="let option of options" [value]="option.value">{{option.text}}</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit"  value="Update Project"  class="btn btn-primary" />
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

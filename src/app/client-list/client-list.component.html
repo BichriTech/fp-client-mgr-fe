@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 80px;">
+
+    <input type="submit" class="btn btn-primary" value="New Client"  routerLink="/client/save"/><br>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Compagny</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of cliList">
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.phone}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.company}}</td>
+                <td>{{client.location}}</td>
+                <td>
+                    <a routerLink="" (click)="getOneClient(client.id)"><fa-icon [icon]="editIcon" 
+                        class="text-info" size="2x"></fa-icon></a>
+
+                    <a routerLink="" (click)="setProjectToClient(client.id)"> <fa-icon [icon]="projectIcon" 
+                        class="text-warning" size="2x" style="margin-left: 15px;"></fa-icon> </a>
+
+                    <a routerLink="" (click)="setMeetingtToClient(client.id)"> <fa-icon [icon]="meetingIcon" 
+                        size="2x" style="margin-left: 15px;"></fa-icon> </a>
+
+                    <a routerLink="/clients-list" (click)="deletingClient(client.id)"> <fa-icon [icon]="trashIcon"
+                            class="text-danger" size="2x" style="margin-left: 15px;"></fa-icon></a>
+                    
+                    
+
+                </td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>

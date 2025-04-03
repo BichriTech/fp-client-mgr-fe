@@ -1,0 +1,102 @@
+<div class="container">
+
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-lg-12">
+            <div class="card" style="border: rgb(30, 225, 160);">
+                <div class="card-header">Client Infos</div>
+                <div class="card-body">
+                    <form #projectForm="ngForm" (ngSubmit)="savingMeeting()">
+
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+
+                                <label>Client Name</label>
+                                <input type="text" class="form-control" name="clientName" [(ngModel)]="cliObj.name"
+                                    disabled />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Compagny</label>
+                                <input type="text" class="form-control" name="company" [(ngModel)]="cliObj.company"
+                                    disabled />
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" [(ngModel)]="cliObj.email"
+                                    disabled />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" name="phone" [(ngModel)]="cliObj.phone"
+                                    disabled />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label>Location</label>
+                                <input type="text" class="form-control" name="location" [(ngModel)]="cliObj.location"
+                                    disabled />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Client Id</label>
+                                <input type="text" class="form-control" name="clientId" [(ngModel)]="cliObj.id"
+                                    disabled />
+                            </div>
+
+                        </div>
+
+                        <br><br>
+
+                        <div class="card" style="border: rgb(11, 218, 104);">
+                            <div class="card-header">Setting Meeting Details</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Meeting Agenda</label>
+                                        <input type="text" class="form-control" name="agenda"
+                                            [(ngModel)]="meetObj.agenda" />
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="form-group col-md-4">
+                                        <label>Meeting Date</label>
+                                        <div class="input-group">
+                                            <input class="form-control" type="date" placeholder="yyyy-MM-dd" name="meetDate"
+                                                [(ngModel)]="meetObj.meetDate" ngbDatepicker
+                                                #dpStart="ngbDatepicker" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label>Meeting Time</label>
+
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" placeholder="hh:mm" name="meetTime"
+                                                [(ngModel)]="meetObj.meetTime" />  
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    <input type="submit" value="Schedule Meeting" class="btn btn-success" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
